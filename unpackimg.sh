@@ -26,6 +26,10 @@ case $(uname -s) in
 esac;
 arch=$plat/`uname -m`;
 
+if [ $arch = "linux/armv7l" ]; then 
+arch=$plat/ARM;
+fi;
+
 aik="${BASH_SOURCE:-$0}";
 aik="$(dirname "$(readlink -f "$aik")")";
 bin="$aik/bin";
